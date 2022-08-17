@@ -1,0 +1,174 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:paddingBottom="20dp"
+    android:background="@drawable/bottom_sheet_background"
+    tools:context=".DownLoad_BottomSheet">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_pref"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:fitsSystemWindows="true"
+        android:max="100"
+        android:minHeight="35dip"
+        android:visibility="invisible"
+        android:progress="0"
+        android:progressDrawable="@drawable/style_horizontal"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_progress"
+        style="@style/Theme.Compose_Download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:text="Download"
+        android:visibility="invisible"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar_pref"
+        app:layout_constraintStart_toStartOf="@+id/progressBar_pref"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_pref" />
+
+
+    <TextView
+        android:id="@+id/txt_bytes"
+        style="@style/Theme.Compose_Download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="20dp"
+        android:text="0%/-MB"
+        android:visibility="invisible"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar_pref"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar_pref"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_pref"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <TextView
+        android:id="@+id/btn_download_pref"
+        style="@style/Theme.Compose_Download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:text="Download"
+        android:textColor="#1E88E5"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <TextView
+        android:id="@+id/text_play"
+        style="@style/Theme.Compose_Download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:text="Play"
+        android:textColor="#1E88E5"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="395dp" />
+
+    <ImageView
+        android:id="@+id/btn_cancell"
+        android:layout_width="wrap_content"
+
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/progressBar_pref"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+    <ImageView
+        android:id="@+id/btn_pause"
+        android:layout_width="wrap_content"
+
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@+id/progressBar_pref"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_pause" />
+
+    <ImageView
+        android:id="@+id/btn_resume"
+        android:layout_width="wrap_content"
+
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@+id/progressBar_pref"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_download" />
+
+    <Button
+        android:id="@+id/btn_offline_center"
+        style="@style/Theme.Compose_Download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="Offline Center"
+        android:textColor="#1E88E5"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
